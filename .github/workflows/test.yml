@@ -23,6 +23,6 @@ jobs:
       - name: Test & Publish code coverage
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-        uses: paambaati/codeclimate-action@v3.0.0
+        uses: paambaati/codeclimate-action@v2.7.1
         with:
           coverageCommand: coverage run --source=backend -m pytest -v backend/tests
