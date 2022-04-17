@@ -1,6 +1,8 @@
 name: TEST
 
-on: [PUSH]
+on:
+  push:
+    branches: [ master ]
 
 jobs:
   test:
@@ -17,7 +19,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install -r requirements-dev.txt
-          
+
       - name: Test & Publish code coverage
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
