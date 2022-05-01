@@ -1,0 +1,17 @@
+name: DEPLOY
+
+on:
+  workflow_run:
+    workflows: ["TEST"]
+    branches:
+      - 'main'
+    types:
+      - completed
+
+jobs:
+  test:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Printing
+        run: echo "Testing Deploy.yml"
