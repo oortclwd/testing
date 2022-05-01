@@ -4,7 +4,7 @@ on:
   workflow_run:
     workflows: ["TEST"]
     branches:
-      - 'main'
+      - 'master'
     types:
       - completed
 
